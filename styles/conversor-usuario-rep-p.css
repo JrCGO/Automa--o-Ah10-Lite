@@ -1,0 +1,129 @@
+/* ===== CONVERSOR USUÁRIO REP-P SPECIFIC STYLES ===== */
+.tabela-container {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--bg-primary);
+}
+
+.tabela-container table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabela-container th,
+.tabela-container td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tabela-container th {
+  background-color: var(--bg-secondary);
+  font-weight: 600;
+  color: var(--text-primary);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tabela-container td {
+  color: var(--text-primary);
+}
+
+.tabela-container tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 40px 20px;
+}
+
+.nome-vinculado {
+  color: var(--success);
+  font-weight: 500;
+}
+
+.nome-nao-vinculado {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.registro-count {
+  background-color: var(--accent-primary);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.filtro-container {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+}
+
+.filtro-container input {
+  flex: 1;
+}
+
+.filtro-container .btn {
+  white-space: nowrap;
+}
+
+.vinculacao-status {
+  padding: 12px;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  margin-top: 16px;
+  display: none;
+}
+
+.vinculacao-status.success {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid var(--success);
+  display: block;
+}
+
+.vinculacao-status.error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid var(--danger);
+  display: block;
+}
+
+[data-theme="dark"] .vinculacao-status.success {
+  background-color: #064e3b;
+  color: #6ee7b7;
+}
+
+[data-theme="dark"] .vinculacao-status.error {
+  background-color: #450a0a;
+  color: #fca5a5;
+}
+
+@media (max-width: 768px) {
+  .filtro-container {
+    flex-direction: column;
+  }
+
+  .filtro-container .btn {
+    width: 100%;
+  }
+
+  .tabela-container {
+    font-size: 12px;
+  }
+
+  .tabela-container th,
+  .tabela-container td {
+    padding: 8px 12px;
+  }
+}

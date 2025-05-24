@@ -1,0 +1,120 @@
+<div class="page-header">
+    <h1>Gerador de Registros de Funcionários</h1>
+    <p>Crie registros de ponto para múltiplos colaboradores de forma rápida e eficiente</p>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 4.354a4 4 0 110 5.292V4.354zM12 10.373a4 4 0 110 5.292V10.373zM12 16.319a4 4 0 110 5.292V16.319z"></path>
+            </svg>
+        </div>
+        <h2>Inserção de Funcionários</h2>
+    </div>
+    <div class="card-content">
+        <div class="grid">
+            <div class="form-group">
+                <label for="nomes">Nomes dos Colaboradores:</label>
+                <textarea id="nomes" placeholder="Digite um nome por linha&#10;Ex: Gestor 00001&#10;Colaborador 00002"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="cpfs">CPFs dos Colaboradores:</label>
+                <textarea id="cpfs" placeholder="Digite um CPF por linha&#10;Ex: 93544955083&#10;12345678901"></textarea>
+            </div>
+        </div>
+        <div class="actions">
+            <button id="importBtn" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Importar Funcionários
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"></path>
+            </svg>
+        </div>
+        <h2>Configuração dos Registros</h2>
+    </div>
+    <div class="card-content">
+        <div class="grid">
+            <div class="form-group">
+                <label for="dataHora">Data e Hora Inicial:</label>
+                <input type="datetime-local" id="dataHora">
+            </div>
+            <div class="form-group">
+                <label for="quantidade">Quantidade de Registros:</label>
+                <input type="number" id="quantidade" min="1" value="10">
+                <div class="info-text">
+                    Total: <strong id="totalRegistros">0</strong> registros serão gerados
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <button id="gerarBtn" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 3v18"></path>
+                    <path d="M17 8l-5-5-5 5"></path>
+                    <path d="M17 16l-5 5-5-5"></path>
+                </svg>
+                Gerar Registros
+            </button>
+            <button id="copiarBtn" class="btn btn-success">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                Copiar Registros
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 00-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 010 7.75"></path>
+            </svg>
+        </div>
+        <h2>Funcionários Adicionados <span id="funcionarioCount" class="funcionario-count">0</span></h2>
+    </div>
+    <div class="card-content">
+        <div id="listaFuncionarios" class="lista-funcionarios">
+            <!-- Funcionários serão adicionados aqui -->
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+        </div>
+        <h2>Resultado</h2>
+    </div>
+    <div class="card-content">
+        <div class="resultado-container">
+            <textarea id="resultado" readonly placeholder="Os registros gerados aparecerão aqui..."></textarea>
+            <div id="copyIndicator" class="copy-indicator">Copiado!</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+/* ===== FUNCIONÁRIOS REP-P SPECIFIC STYLES ===== */
+.json-preview {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.funcionario-preview {
+  background-color: var(--bg-tertiary);
+  border-radius: var(--border-radius);
+  padding: 12px;
+  margin-bottom: 12px;
+  border-left: 4px solid var(--accent-primary);
+}
+
+.funcionario-preview h4 {
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.funcionario-preview .detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.funcionario-preview .detail .label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.funcionario-preview .detail .value {
+  color: var(--text-primary);
+  font-family: "Courier New", monospace;
+}
+
+.download-info {
+  background-color: var(--accent-light);
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--border-radius);
+  padding: 12px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .download-info {
+  background-color: rgba(59, 130, 246, 0.1);
+}
